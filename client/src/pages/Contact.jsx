@@ -12,7 +12,12 @@ import {
 import { MdMessage } from "react-icons/md"; // For message icon
 
 export default function Contact() {
-  const [form, setForm] = useState({ name: "", email: "", subject: "", message: "" });
+  const [form, setForm] = useState({
+    name: "",
+    email: "",
+    subject: "",
+    message: "",
+  });
   const [status, setStatus] = useState({ type: "", message: "" }); // { type: 'success' | 'error', message: '...' }
   const [isSubmitting, setIsSubmitting] = useState(false);
 
@@ -56,11 +61,18 @@ export default function Contact() {
       // await axios.post("/api/contact", form);
       await new Promise((resolve) => setTimeout(resolve, 1500)); // Simulate network delay
 
-      setStatus({ type: "success", message: "Message transmitted successfully! We will connect with you shortly." });
+      setStatus({
+        type: "success",
+        message:
+          "Message transmitted successfully! We will connect with you shortly.",
+      });
       setForm({ name: "", email: "", subject: "", message: "" }); // Clear form
     } catch (error) {
       console.error("Contact form submission error:", error);
-      setStatus({ type: "error", message: "Transmission failed. Please try again later." });
+      setStatus({
+        type: "error",
+        message: "Transmission failed. Please try again later.",
+      });
     } finally {
       setIsSubmitting(false);
       setTimeout(() => setStatus({ type: "", message: "" }), 5000); // Clear status message after 5 seconds
@@ -129,114 +141,36 @@ export default function Contact() {
             Your connection to the future of urban innovation.
           </p>
           <p className="text-lg text-web3-text-primary/80 max-w-3xl mx-auto">
-            Whether you have inquiries, partnership proposals, or feedback, our Nexus team is ready to receive your data stream.
+            Whether you have inquiries, partnership proposals, or feedback, our
+            Nexus team is ready to receive your data stream.
           </p>
         </section>
 
         {/* Contact Form Section */}
+        {/* Direct Email Contact Section */}
         <section className="mb-20 px-4 py-12 bg-web3-card/60 backdrop-blur-lg rounded-xl border border-web3-accent-purple/40 shadow-web3-shadow-deep animate-fade-in delay-300">
           <h2 className="text-4xl font-bold text-web3-accent-purple text-center mb-10 drop-shadow-[0_0_15px_var(--web3-accent-purple)]">
-            Send a Data Stream
+            Contact the Team
           </h2>
 
-          {status.message && (
-            <div
-              className={`mb-6 px-4 py-3 rounded-lg text-center font-semibold text-sm shadow-web3-glow-blue-soft
-                ${
-                  status.type === "success"
-                    ? "bg-web3-success/20 border border-web3-success text-web3-success"
-                    : "bg-web3-error/20 border border-web3-error text-web3-error"
-                }`}
-              role="alert"
-              aria-live="assertive"
-            >
-              {status.message}
-            </div>
-          )}
+          <div className="text-center max-w-2xl mx-auto text-lg text-web3-text-primary leading-relaxed space-y-6">
+            <p>
+              🚀 We’re always ready to collaborate, innovate, and respond. If
+              you want to reach us directly, drop a message at:
+            </p>
 
-          <form onSubmit={handleSubmit} className="space-y-6 max-w-2xl mx-auto">
-            {/* Name Input */}
-            <div className="relative animate-fade-in delay-400">
-              <input
-                type="text"
-                id="name"
-                name="name"
-                placeholder="Your Quantum Alias"
-                value={form.name}
-                onChange={handleChange}
-                className="w-full pl-12 pr-5 py-3 rounded-xl bg-web3-input-bg border border-web3-accent-blue/60 placeholder-web3-placeholder text-web3-text-primary text-lg font-semibold focus:outline-none focus:ring-2 focus:ring-web3-accent-blue focus:border-transparent shadow-web3-glow-blue-soft transition-all duration-300"
-                required
-                aria-label="Your Name"
-              />
-              <FaUser className="absolute left-4 top-1/2 -translate-y-1/2 text-web3-text-secondary/70 text-xl" />
-            </div>
+            <p className="text-xl font-bold text-web3-accent-blue underline underline-offset-4">
+              <a
+                href="mailto:ashiquemurad@gmail.com"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                ashiquemurad@gmail.com
+              </a>
+            </p>
 
-            {/* Email Input */}
-            <div className="relative animate-fade-in delay-500">
-              <input
-                type="email"
-                id="email"
-                name="email"
-                placeholder="Your Secure Comms ID"
-                value={form.email}
-                onChange={handleChange}
-                className="w-full pl-12 pr-5 py-3 rounded-xl bg-web3-input-bg border border-web3-accent-purple/60 placeholder-web3-placeholder text-web3-text-primary text-lg font-semibold focus:outline-none focus:ring-2 focus:ring-web3-accent-purple focus:border-transparent shadow-web3-glow-purple-soft transition-all duration-300"
-                required
-                aria-label="Your Email"
-              />
-              <FaEnvelope className="absolute left-4 top-1/2 -translate-y-1/2 text-web3-text-secondary/70 text-xl" />
-            </div>
-
-            {/* Subject Input */}
-            <div className="relative animate-fade-in delay-600">
-              <input
-                type="text"
-                id="subject"
-                name="subject"
-                placeholder="Data Stream Subject Line"
-                value={form.subject}
-                onChange={handleChange}
-                className="w-full pl-12 pr-5 py-3 rounded-xl bg-web3-input-bg border border-web3-accent-orange/60 placeholder-web3-placeholder text-web3-text-primary text-lg font-semibold focus:outline-none focus:ring-2 focus:ring-web3-accent-orange focus:border-transparent shadow-web3-glow-orange-soft transition-all duration-300"
-                required
-                aria-label="Subject"
-              />
-              <FaTag className="absolute left-4 top-1/2 -translate-y-1/2 text-web3-text-secondary/70 text-xl" />
-            </div>
-
-            {/* Message Textarea */}
-            <div className="relative animate-fade-in delay-700">
-              <textarea
-                id="message"
-                name="message"
-                rows="6"
-                placeholder="Your Message Data Packet"
-                value={form.message}
-                onChange={handleChange}
-                className="w-full pl-5 pr-5 py-3 rounded-xl bg-web3-input-bg border border-web3-accent-green/60 placeholder-web3-placeholder text-web3-text-primary text-lg font-semibold focus:outline-none focus:ring-2 focus:ring-web3-accent-green focus:border-transparent shadow-web3-glow-green-soft transition-all duration-300 resize-y"
-                required
-                aria-label="Your Message"
-              ></textarea>
-              <MdMessage className="absolute left-4 top-6 text-web3-text-secondary/70 text-xl" /> {/* Adjusted icon position for textarea */}
-            </div>
-
-            {/* Submit Button */}
-            <button
-              type="submit"
-              disabled={isSubmitting}
-              className="w-full py-3 bg-gradient-to-r from-web3-accent-blue to-web3-accent-purple hover:from-web3-accent-purple hover:to-web3-accent-blue text-web3-text-primary rounded-xl font-bold text-lg shadow-web3-glow-blue-strong hover:shadow-web3-glow-purple-strong transition-all duration-300 transform hover:-translate-y-0.5 flex items-center justify-center gap-2"
-            >
-              {isSubmitting ? (
-                <>
-                  <div className="animate-spin rounded-full h-5 w-5 border-t-2 border-b-2 border-web3-text-primary"></div>
-                  Transmitting...
-                </>
-              ) : (
-                <>
-                  <FaPaperPlane className="text-lg" /> Send Data Stream
-                </>
-              )}
-            </button>
-          </form>
+            <p>We’ll get back to you faster than a quantum ping ⚡.</p>
+          </div>
         </section>
 
         {/* Direct Contact Info Section */}
@@ -247,19 +181,28 @@ export default function Contact() {
           <div className="grid grid-cols-1 md:grid-cols-2 gap-8 max-w-3xl mx-auto text-web3-text-primary">
             <div className="text-center bg-web3-input-bg p-6 rounded-lg border border-web3-accent-purple/30 shadow-web3-shadow-soft hover:shadow-web3-glow-purple transition-all duration-300 transform hover:-translate-y-1">
               <FaPhoneAlt className="text-web3-accent-purple text-5xl mx-auto mb-4 drop-shadow-[0_0_10px_var(--web3-accent-purple)]" />
-              <h3 className="text-2xl font-semibold text-web3-accent-purple mb-2">Secure Comms Link</h3>
+              <h3 className="text-2xl font-semibold text-web3-accent-purple mb-2">
+                Secure Comms Link
+              </h3>
               <p className="text-lg font-mono">+(880) 2070-DHAKA</p>
-              <p className="text-sm text-web3-text-secondary">(Standard data rates apply)</p>
+              <p className="text-sm text-web3-text-secondary">
+                (Standard data rates apply)
+              </p>
             </div>
             <div className="text-center bg-web3-input-bg p-6 rounded-lg border border-web3-accent-orange/30 shadow-web3-shadow-soft hover:shadow-web3-glow-orange transition-all duration-300 transform hover:-translate-y-1">
               <FaMapMarkerAlt className="text-web3-accent-orange text-5xl mx-auto mb-4 drop-shadow-[0_0_10px_var(--web3-accent-orange)]" />
-              <h3 className="text-2xl font-semibold text-web3-accent-orange mb-2">Nexus Command Center</h3>
-              <p className="text-lg font-mono">Quantum District 7, Dhaka 2070</p>
-              <p className="text-sm text-web3-text-secondary">(Coordinates: 23.777 N, 90.399 E)</p>
+              <h3 className="text-2xl font-semibold text-web3-accent-orange mb-2">
+                Nexus Command Center
+              </h3>
+              <p className="text-lg font-mono">
+                Quantum District 7, Dhaka 2070
+              </p>
+              <p className="text-sm text-web3-text-secondary">
+                (Coordinates: 23.777 N, 90.399 E)
+              </p>
             </div>
           </div>
         </section>
-
       </div>
     </div>
   );
