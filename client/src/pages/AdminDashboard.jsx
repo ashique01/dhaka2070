@@ -1,24 +1,24 @@
 import React, { useEffect, useState, useRef } from "react";
 import api from "../utils/api";
-import { Link, useNavigate } from "react-router-dom"; // Import useNavigate
+import { Link, useNavigate } from "react-router-dom"; 
 import {
   FaUsers,
   FaCloud,
   FaRobot,
-  FaShieldAlt, // Changed from MdSecurity for consistency with FaShieldAlt in other components
-  FaArrowUp, // For scroll to top
-  FaSignOutAlt, // Logout icon
+  FaShieldAlt, 
+  FaArrowUp, 
+  FaSignOutAlt, 
 } from "react-icons/fa";
 
 export default function AdminDashboard() {
-  const navigate = useNavigate(); // Initialize useNavigate hook
+  const navigate = useNavigate(); 
   const [cities, setCities] = useState([]);
   const [loading, setLoading] = useState(true);
   const [deletingId, setDeletingId] = useState(null);
   const [message, setMessage] = useState("");
 
-  const topOfPageRef = useRef(null); // Ref for scroll to top
-  const [showScrollToTop, setShowScrollToTop] = useState(false); // State for scroll to top button
+  const topOfPageRef = useRef(null);
+  const [showScrollToTop, setShowScrollToTop] = useState(false);
 
   useEffect(() => {
     fetchCities();

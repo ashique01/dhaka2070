@@ -12,6 +12,7 @@ import Login from "./pages/Login";
 import RegisterAdmin from "./pages/RegisterAdmin";
 import About from "./pages/About";
 import Contact from "./pages/Contact";
+import NotFound from "./pages/NotFound";
 
 export default function App() {
   return (
@@ -37,6 +38,7 @@ export default function App() {
               </PrivateRoute>
             }
           />
+          <Route path="*" element={<NotFound />} />
         </Routes>
       </Layout>
     </Router>

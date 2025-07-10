@@ -29,6 +29,10 @@ app.use(express.json());
 app.use("/api/city", cityRoutes);
 app.use("/api/admin", adminRoutes);
 
+app.use((req, res, next) => {
+  res.status(404).json({ message: "API route not found" });
+});
+
 mongoose.connect(process.env.MONGO_URI)
   .then(() => {
     console.log("✅ MongoDB connected");
