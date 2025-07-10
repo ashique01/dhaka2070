@@ -16,7 +16,7 @@ export default function RegisterAdmin() {
 
     try {
       // In a real application, ensure your API endpoint is correct and secure
-      const { data } = await axios.post("http://localhost:5000/api/admin/register", form);
+      const { data } = await axios.post("https://dhaka2070.onrender.com/api/admin/register", form);
 
       alert(data.message || "Admin registered successfully!"); // Use message from API if available
       navigate("/login"); // Redirect to login page after successful registration

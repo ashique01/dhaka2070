@@ -134,7 +134,7 @@ export default function EditCity() {
     };
 
     try {
-      await api.patch(`/city/${id}`, payload);
+      await api.patch(`https://dhaka2070.onrender.com/city/${id}`, payload);
       setMessage("✅ Zone updated successfully!");
       setTimeout(() => {
         if (redirectToAdmin) navigate("/admin/dashboard");

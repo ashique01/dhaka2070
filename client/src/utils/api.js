@@ -1,7 +1,7 @@
 import axios from "axios";
 
 const api = axios.create({
-  baseURL: "http://localhost:5000/api", // Adjust if needed
+  baseURL: "https://dhaka2070.onrender.com/api", // Adjust if needed
 });
 
 export default api;

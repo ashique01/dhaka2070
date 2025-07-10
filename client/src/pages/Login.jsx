@@ -17,7 +17,7 @@ export default function Login() {
     setIsSubmitting(true);
 
     try {
-      const { data } = await axios.post("http://localhost:5000/api/admin/login", {
+      const { data } = await axios.post("https://dhaka2070.onrender.com/api/admin/login", {
         username: form.username,
         password: form.password,
       });
