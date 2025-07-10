@@ -7,7 +7,23 @@ const cityRoutes = require("./routes/cityRoutes");
 const adminRoutes = require("./routes/adminRoutes");
 
 const app = express();
-app.use(cors());
+const allowedOrigins = [
+  'http://localhost:5173',
+  'https://dhaka2070.netlify.app'
+];
+
+// ✅ CORS setup
+app.use(cors({
+  origin: function (origin, callback) {
+    if (!origin || allowedOrigins.includes(origin)) {
+      callback(null, true);
+    } else {
+      callback(new Error('Not allowed by CORS'));
+    }
+  },
+  credentials: true,
+}));
+
 app.use(express.json());
 
 app.use("/api/city", cityRoutes);
