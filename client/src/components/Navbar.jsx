@@ -160,6 +160,28 @@ export default function Navbar({ theme, setTheme }) {
                   </span>
                 </li>
               </ul>
+
+              {/* Theme Toggle Button */}
+              <div className="mt-6 flex justify-center">
+                <button
+                  onClick={() => setTheme(theme === "dark" ? "light" : "dark")}
+                  className="px-5 py-2 rounded-full border border-web3-border bg-web3-dark-bg text-web3-text-primary hover:shadow-md transition
+                       light:border-light-web3-border light:bg-light-web3-dark-bg light:text-light-web3-text-primary light:hover:shadow-md"
+                  aria-label="Toggle dark/light mode"
+                >
+                  {theme === "dark" ? "🌞 Light Mode" : "🌙 Dark Mode"}
+                </button>
+              </div>
+
+              <footer
+                className="text-xs text-web3-text-secondary border-t border-web3-border pt-4 font-mono
+                     light:text-light-web3-text-secondary light:border-light-web3-border mt-6"
+              >
+                <p>&copy; 2070 CyberGrid</p>
+                <p className="mt-1 text-web3-text-secondary light:text-light-web3-text-secondary">
+                  Quantum Core Secured
+                </p>
+              </footer>
             </div>
           </div>
         </>
