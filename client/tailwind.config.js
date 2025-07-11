@@ -1,63 +1,52 @@
 /** @type {import('tailwindcss').Config} */
 module.exports = {
   content: ["./index.html", "./src/**/*.{js,jsx}"],
-  darkMode: "class", // Enables dark mode globally via class strategy
+  darkMode: "class",
   theme: {
     extend: {
-      // Best color combination for Web3
       colors: {
-        // Core Palette
-        "web3-dark-bg": "#0D1117", // Deep charcoal for main backgrounds (GitHub dark mode inspired)
-        "web3-card": "#161B22", // Slightly lighter charcoal for cards and sections
-        "web3-border": "#30363D", // Subtle grey for borders and dividers
-        "web3-text-primary": "#C9D1D9", // Light grey for main text
-        "web3-text-secondary": "#8B949E", // Muted grey for secondary text, labels
-
-        // Accent Colors (often used for branding, CTAs, highlights)
-        "web3-accent-blue": "#2196F3", // Vibrant blue for primary actions, links
-        "web3-accent-purple": "#7B61FF", // Modern purple for unique elements, active states
-        "web3-accent-green": "#33CC99", // Fresh green for success states, positive indicators
-        "web3-accent-orange": "#FF9800", // Warm orange for warnings, secondary CTAs
-
-        // Specific UI Element Colors
-        "web3-input-bg": "#010409", // Very dark for input fields to provide contrast
-        "web3-placeholder": "#545D68", // Muted grey for placeholder text
-        "web3-success": "#33CC99", // Confirmed green for success messages
-        "web3-warning": "#FFB300", // Amber for warning messages
-        "web3-error": "#EF5350", // Red for error messages
-
-        // Shadow Colors (Subtle and modern)
-        "web3-shadow-soft": "rgba(0, 0, 0, 0.2)", // Gentle shadow for cards
-        "web3-shadow-deep": "rgba(0, 0, 0, 0.4)", // Deeper shadow for elevated elements
-
-        // Gradient Colors (for backgrounds or special elements)
-        "web3-gradient-start": "#2A0055", // Deep purple for gradients
-        "web3-gradient-end": "#001D3D", // Dark blue for gradients
+        "web3-dark-bg": "#0D1117",
+        "web3-card": "#161B22",
+        "web3-border": "#30363D",
+        "web3-text-primary": "#C9D1D9",
+        "web3-text-secondary": "#8B949E",
+        "web3-accent-blue": "#2196F3",
+        "web3-accent-purple": "#7B61FF",
+        "web3-accent-green": "#33CC99",
+        "web3-accent-orange": "#FF9800",
+        "web3-input-bg": "#010409",
+        "web3-placeholder": "#545D68",
+        "web3-success": "#33CC99",
+        "web3-warning": "#FFB300",
+        "web3-error": "#EF5350",
+        "web3-shadow-soft": "rgba(0, 0, 0, 0.2)",
+        "web3-shadow-deep": "rgba(0, 0, 0, 0.4)",
+        "web3-gradient-start": "#2A0055",
+        "web3-gradient-end": "#001D3D",
       },
-
       fontFamily: {
-        futuristic: ["Orbitron", "sans-serif"], // Good for titles, headings
-        mono: ["Fira Code", "monospace"], // Excellent for code snippets, hashes
-        sans: ["Inter", "sans-serif"], // Modern, highly readable for body text (add Inter to your project)
+        futuristic: ["Orbitron", "sans-serif"],
+        mono: ["Fira Code", "monospace"],
+        sans: ["Inter", "sans-serif"],
       },
       boxShadow: {
-        neon: "0 0 12px rgba(123, 97, 255, 0.6)", // Purple neon glow
+        neon: "0 0 12px rgba(123, 97, 255, 0.6)",
         cyan: "0 0 12px rgba(0,255,255,0.6)",
-        green: "0 0 12px rgba(51, 204, 153, 0.6)", // Green neon glow
-        card: "0 0 30px rgba(0, 0, 0, 0.2)", // Subtle, dark card shadow
+        green: "0 0 12px rgba(51, 204, 153, 0.6)",
+        card: "0 0 30px rgba(0, 0, 0, 0.2)",
         soft: "0 2px 10px rgba(0, 0, 0, 0.1)",
         innerLight: "inset 0 1px 3px rgba(0,0,0,0.05)",
-        goldGlow: "0 0 10px rgba(255, 215, 0, 0.4)", // A more traditional gold glow
-        "web3-glow-blue": "0 0 15px rgba(33, 150, 243, 0.5)", // Accent blue glow
-        "web3-glow-purple": "0 0 15px rgba(123, 97, 255, 0.5)", // Accent purple glow
+        goldGlow: "0 0 10px rgba(255, 215, 0, 0.4)",
+        "web3-glow-blue": "0 0 15px rgba(33, 150, 243, 0.5)",
+        "web3-glow-purple": "0 0 15px rgba(123, 97, 255, 0.5)",
       },
       backgroundImage: {
         "premium-dark":
-          "radial-gradient(circle at 30% 30%, rgba(33,150,243,0.05), rgba(123,97,255,0.03))", // Subtle blend of accent colors
+          "radial-gradient(circle at 30% 30%, rgba(33,150,243,0.05), rgba(123,97,255,0.03))",
         "grid-overlay":
           "linear-gradient(rgba(255,255,255,0.02) 1px, transparent 1px), linear-gradient(90deg, rgba(255,255,255,0.02) 1px, transparent 1px)",
         "web3-gradient":
-          "linear-gradient(135deg, var(--tw-colors-web3-gradient-start), var(--tw-colors-web3-gradient-end))", // Modern web3 gradient
+          "linear-gradient(135deg, var(--tw-colors-web3-gradient-start), var(--tw-colors-web3-gradient-end))",
       },
       keyframes: {
         "pulse-light": {
