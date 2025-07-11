@@ -1,3 +1,89 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+/* Glitch effect base styles */
+.glitch {
+  position: relative;
+  color: var(--tw-text-opacity, 1) var(--tw-text-primary, #C9D1D9);
+  font-family: 'Orbitron', sans-serif;
+  font-weight: 700;
+}
+
+.glitch::before,
+.glitch::after {
+  content: attr(data-text);
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 100%;
+  overflow: hidden;
+  clip-path: inset(0 0 0 0);
+  animation-timing-function: steps(1);
+  animation-iteration-count: infinite;
+  mix-blend-mode: screen;
+}
+
+/* Dark mode glitch colors & animation */
+.dark .glitch::before {
+  left: 2px;
+  text-shadow: -2px 0 #7B61FF;
+  animation: glitch-1 2.5s infinite;
+  color: #7B61FF;
+  opacity: 0.8;
+}
+
+.dark .glitch::after {
+  left: -2px;
+  text-shadow: -2px 0 #2196F3;
+  animation: glitch-2 2.5s infinite 0.5s;
+  color: #2196F3;
+  opacity: 0.6;
+}
+
+/* Light mode glitch colors & animation */
+.light .glitch::before {
+  left: 2px;
+  text-shadow: -2px 0 #8B5CF6; /* Light purple */
+  animation: glitch-1 2.5s infinite;
+  color: #8B5CF6;
+  opacity: 0.8;
+}
+
+.light .glitch::after {
+  left: -2px;
+  text-shadow: -2px 0 #3B82F6; /* Light blue */
+  animation: glitch-2 2.5s infinite 0.5s;
+  color: #3B82F6;
+  opacity: 0.6;
+}
+
+/* Use .light class on <html> or <body> for light mode, .dark for dark mode */
+
+/* Import keyframes from tailwind.config.js (or redefine here for safety) */
+@keyframes glitch-1 {
+  0%, 10%, 100% { opacity: 0; }
+  2% { transform: translate(2px, 2px); opacity: 0.8; }
+  4% { transform: translate(-2px, -2px); opacity: 0.8; }
+  6% { transform: translate(2px, -2px); opacity: 0.8; }
+  8% { transform: translate(-2px, 2px); opacity: 0.8; }
+}
+
+@keyframes glitch-2 {
+  0%, 10%, 100% { opacity: 0; }
+  3% { transform: translate(-3px, 3px); opacity: 0.6; }
+  5% { transform: translate(3px, -3px); opacity: 0.6; }
+  7% { transform: translate(-3px, -3px); opacity: 0.6; }
+  9% { transform: translate(3px, 3px); opacity: 0.6; }
+}
+
+/* Basic body background and text colors switching */
+body {
+  background-color: var(--tw-bg-opacity, 1) var(--tw-bg-light-web3-dark-bg, #F9FAFB);
+  color: var(--tw-text-opacity, 1) var(--tw-text-light-web3-text-primary, #1E293B);
+}
+
+.dark body {
+  background-color: var(--tw-bg-opacity, 1) var(--tw-bg-web3-dark-bg, #0D1117);
+  color: var(--tw-text-opacity, 1) var(--tw-text-web3-text-primary, #C9D1D9);
+}
