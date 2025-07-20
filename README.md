@@ -24,8 +24,8 @@ A responsive, cyberpunk-inspired navigation bar with glitch text effects, dark/l
 ## 📂 Installation  
 
 ```bash
-git clone https://github.com/your-username/cybernav.git  
-cd cybernav  
+git clone https://github.com/ashique01/dhaka2070.git
+cd dhaka2070  
 npm install  
 npm start  
 ```
