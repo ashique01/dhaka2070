@@ -12,8 +12,8 @@ A responsive, cyberpunk-inspired navigation bar with glitch text effects, dark/l
 
 ## 🛠️ Tech Stack  
 - **Frontend:** React.js, Tailwind CSS, React Router, Heroicons  
-- **Backend:** *(Not Applicable - Frontend Component)*  
-- **Database:** *(Not Applicable)*  
+- **Backend:** Nodejs,ExpressJs  
+- **Database:** MongoDB  
 
 ## 🔗 Live Demo  
 [https://dhaka2070.netlify.app/](https://dhaka2070.netlify.app/)  
