@@ -18,8 +18,6 @@ A responsive, cyberpunk-inspired navigation bar with glitch text effects, dark/l
 ## 🔗 Live Demo  
 [https://dhaka2070.netlify.app/](https://dhaka2070.netlify.app/)  
 
-## 🖥️ Screenshots (Optional)  
-*(Add if you have)*  
 
 ## 📂 Installation  
 
